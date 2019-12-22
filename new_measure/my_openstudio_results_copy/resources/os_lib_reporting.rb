@@ -1634,8 +1634,10 @@ module OsLib_Reporting
     end
     ext_const_base.sort.each do |construction, count|
       net_area = construction.getNetArea
-      net_area_ip = OpenStudio.convert(net_area, 'm^2', 'ft^2').get
-      net_area_ip_neat = OpenStudio.toNeatString(net_area_ip, 0, true)
+      # net_area_ip = OpenStudio.convert(net_area, 'm^2', 'ft^2').get
+      # net_area_ip_neat = OpenStudio.toNeatString(net_area_ip, 0, true)
+	  net_area_neat = OpenStudio.toNeatString(net_area, 0, true)
+	  
       surface_count = count
       if  construction.thermalConductance.is_initialized
         thermal_conductance = construction.thermalConductance.get
