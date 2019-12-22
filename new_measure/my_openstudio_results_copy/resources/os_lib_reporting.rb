@@ -248,7 +248,8 @@ module OsLib_Reporting
     # net site energy
     display = 'Net Site Energy'
     source_units = 'GJ'
-    target_units = 'kBtu'
+    # change units l.252 kBtu to kWh
+	target_units = 'kWh'
     value = OpenStudio.convert(sqlFile.netSiteEnergy.get, source_units, target_units).get
     value_neat = OpenStudio.toNeatString(value, 0, true)
     general_building_information[:data] << [display, value_neat, target_units]
