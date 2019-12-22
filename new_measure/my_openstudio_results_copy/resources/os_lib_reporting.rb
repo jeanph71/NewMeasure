@@ -1617,8 +1617,8 @@ module OsLib_Reporting
     surface_data = {}
     surface_data[:title] = 'Base Surface Constructions'
     surface_data[:header] = ['Construction', 'Net Area', 'Surface Count', 'R Value']
-    area_units = 'ft^2'
-    target_units = 'ft^2*h*R/Btu'
+    area_units = 'm^2'
+    target_units = 'm^2*K/W'
     surface_data[:units] = ['', area_units, '', target_units]
     surface_data[:data] = []
 
@@ -1642,13 +1642,17 @@ module OsLib_Reporting
       if  construction.thermalConductance.is_initialized
         thermal_conductance = construction.thermalConductance.get
         source_units = 'm^2*K/W'
-        r_value_ip = OpenStudio.convert(1 / thermal_conductance, source_units, target_units).get
-        r_value_ip_neat = OpenStudio.toNeatString(r_value_ip, 2, true)
+        # r_value_ip = OpenStudio.convert(1 / thermal_conductance, source_units, target_units).get
+        # r_value_ip_neat = OpenStudio.toNeatString(r_value_ip, 2, true)
+		r_value_neat = OpenStudio.toNeatString(r_value, 2, true)
       else
         r_value_ip_neat = ''
       end
-      surface_data[:data] << [construction.name, net_area_ip_neat, surface_count, r_value_ip_neat]
-      runner.registerValue(OsLib_Reporting.reg_val_string_prep(construction.name.to_s), net_area_ip, area_units)
+	  # modif de la ligne en SI
+      #surface_data[:data] << [construction.name, net_area_ip_neat, surface_count, r_value_ip_neat]
+	   surface_data[:data] << [construction.name, net_area_neat, surface_count, r_value_neat]
+      #runner.registerValue(OsLib_Reporting.reg_val_string_prep(construction.name.to_s), net_area_ip, area_units)
+	  runner.registerValue(OsLib_Reporting.reg_val_string_prep(construction.name.to_s), net_area, area_units)
     end
     envelope_tables << surface_data
 
