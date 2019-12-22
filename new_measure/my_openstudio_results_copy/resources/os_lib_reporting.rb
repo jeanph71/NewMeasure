@@ -1305,7 +1305,7 @@ module OsLib_Reporting
 
       # loop flow rates
       sizing_source_units = 'm^3/s'
-      sizing_target_units = 'gal/min'
+      sizing_target_units = 'm^3/s'
       if plant_loop.maximumLoopFlowRate.is_initialized
         sizing_ip = OpenStudio.convert(plant_loop.maximumLoopFlowRate.get, sizing_source_units, sizing_target_units).get
         sizing_ip_neat = OpenStudio.toNeatString(sizing_ip, 2, true)
@@ -1313,7 +1313,7 @@ module OsLib_Reporting
         sizing_ip_neat = 'Autosized'
       end
       value_source_units = 'm^3/s'
-      value_target_units = 'gal/min'
+      value_target_units = 'm^3/s'
       if plant_loop.maximumLoopFlowRate.is_initialized
         value_ip = OpenStudio.convert(plant_loop.minimumLoopFlowRate.get, value_source_units, value_target_units).get
         value_ip_neat = OpenStudio.toNeatString(value_ip, 2, true)
