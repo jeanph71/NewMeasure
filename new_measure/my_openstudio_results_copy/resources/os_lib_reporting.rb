@@ -1642,11 +1642,12 @@ module OsLib_Reporting
       if  construction.thermalConductance.is_initialized
         thermal_conductance = construction.thermalConductance.get
         source_units = 'm^2*K/W'
-        # r_value_ip = OpenStudio.convert(1 / thermal_conductance, source_units, target_units).get
+		target_units = 'm^2*K/W'
+        r_value = OpenStudio.convert(1 / thermal_conductance, source_units, target_units).get
         # r_value_ip_neat = OpenStudio.toNeatString(r_value_ip, 2, true)
 		r_value_neat = OpenStudio.toNeatString(r_value, 2, true)
       else
-        r_value_ip_neat = ''
+        r_value_neat = ''
       end
 	  # modif de la ligne en SI
       #surface_data[:data] << [construction.name, net_area_ip_neat, surface_count, r_value_ip_neat]
