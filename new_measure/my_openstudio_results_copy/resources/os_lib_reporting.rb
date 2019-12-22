@@ -1517,7 +1517,7 @@ module OsLib_Reporting
       if component.heatingCoil.to_CoilHeatingWater.is_initialized
         heating_coil = component.heatingCoil.to_CoilHeatingWater.get
         sizing_source_units = 'm^3/s'
-        sizing_target_units = 'gal/min'
+        sizing_target_units = 'm^3/s'
         if heating_coil.maximumWaterFlowRate.is_initialized
           sizing_ip = OpenStudio.convert(heating_coil.maximumWaterFlowRate.get, sizing_source_units, sizing_target_units).get
           sizing_ip_neat = OpenStudio.toNeatString(sizing_ip, 2, true)
