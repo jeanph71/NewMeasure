@@ -1324,7 +1324,7 @@ module OsLib_Reporting
 
       # loop temperatures
       source_units = 'C'
-      target_units = 'F'
+      target_units = 'C'
       min_temp = plant_loop.minimumLoopTemperature
       max_temp = plant_loop.maximumLoopTemperature
       value_neat = "#{OpenStudio.convert(min_temp, source_units, target_units).get.round(1)} to #{OpenStudio.convert(max_temp, source_units, target_units).get.round(1)}"
@@ -1333,7 +1333,7 @@ module OsLib_Reporting
       # get values out of sizing plant
       sizing_plant = plant_loop.sizingPlant
       source_units = 'C'
-      target_units = 'F'
+      target_units = 'C'
       loop_exit_temp = sizing_plant.designLoopExitTemperature
       value_neat = OpenStudio.toNeatString(OpenStudio.convert(loop_exit_temp, source_units, target_units).get, 2, true)
 
