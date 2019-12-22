@@ -557,7 +557,7 @@ module OsLib_Reporting
       next if fuel_type == 'Water'
       query = "SELECT Value FROM tabulardatawithstrings WHERE ReportName='AnnualBuildingUtilityPerformanceSummary' and TableName='End Uses' and RowName= 'Total End Uses' and ColumnName= '#{fuel_type}'"
       results = sqlFile.execAndReturnFirstDouble(query)
-      target_units = 'kBtu'
+      target_units = 'kWh'
       value = OpenStudio.convert(results.get, 'GJ', target_units).get
       value_neat = OpenStudio.toNeatString(value, 0, true)
       output_data_energy_use[:data] << [fuel_type, value_neat]
