@@ -1090,7 +1090,7 @@ module OsLib_Reporting
     elsif component.to_WaterHeaterMixed.is_initialized
       component = component.to_WaterHeaterMixed.get
       sizing_source_units = 'm^3'
-      sizing_target_units = 'gal'
+      sizing_target_units = 'm^3'
       if component.tankVolume.is_initialized
         sizing_ip = OpenStudio.convert(component.tankVolume.get, sizing_source_units, sizing_target_units).get
         sizing_ip_neat = OpenStudio.toNeatString(sizing_ip, 0, true)
