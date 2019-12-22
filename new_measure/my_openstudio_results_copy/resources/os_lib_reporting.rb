@@ -1536,7 +1536,7 @@ module OsLib_Reporting
       if component.supplyAirFan.to_FanConstantVolume.is_initialized
         fan = component.supplyAirFan.to_FanConstantVolume.get
         sizing_source_units = 'm^3/s'
-        sizing_target_units = 'cfm'
+        sizing_target_units = 'm^3/s'
         if fan.maximumFlowRate.is_initialized
           sizing_ip = OpenStudio.convert(fan.maximumFlowRate.get, sizing_source_units, sizing_target_units).get
           sizing_ip_neat = OpenStudio.toNeatString(sizing_ip, 2, true)
