@@ -1377,7 +1377,7 @@ module OsLib_Reporting
 
       # report outdoor air when not heating or cooling
       sizing_source_units = 'm^3/s'
-      sizing_target_units = 'cfm'
+      sizing_target_units = 'm^3/s'
       if component.outdoorAirFlowRateWhenNoCoolingorHeatingisNeeded.is_initialized
         sizing_ip = OpenStudio.convert(component.outdoorAirFlowRateWhenNoCoolingorHeatingisNeeded.get, sizing_source_units, sizing_target_units).get
         sizing_ip_neat = OpenStudio.toNeatString(sizing_ip, 2, true)
