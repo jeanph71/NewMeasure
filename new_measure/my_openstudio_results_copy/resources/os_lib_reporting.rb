@@ -732,7 +732,7 @@ module OsLib_Reporting
     elsif component.iddObject.name == 'OS:Coil:Cooling:Water'
       component = component.to_CoilCoolingWater.get
       sizing_source_units = 'm^3/s'
-      sizing_target_units = 'gal/min'
+      sizing_target_units = 'm^3/s'
       if component.designWaterFlowRate.is_initialized
         sizing_ip = OpenStudio.convert(component.designWaterFlowRate.get, sizing_source_units, sizing_target_units).get
         sizing_ip_neat = OpenStudio.toNeatString(sizing_ip, 2, true)
