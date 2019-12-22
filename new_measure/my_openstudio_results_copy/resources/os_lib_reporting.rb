@@ -270,7 +270,7 @@ module OsLib_Reporting
     else
       display = 'Total Building Area'
       source_units = 'm^2'
-      target_units = 'ft^2'
+      target_units = 'm^2'
       value = OpenStudio.convert(query_results.get, source_units, target_units).get
       value_neat = OpenStudio.toNeatString(value, 0, true)
       general_building_information[:data] << [display, value_neat, target_units]
