@@ -618,7 +618,7 @@ module OsLib_Reporting
     tolerance_summary = {}
     tolerance_summary[:title] = 'Unmet Hours Tolerance'
     tolerance_summary[:header] = ['Tolerance for Time Setpoint Not Met', 'Temperature']
-    target_units = 'F'
+    target_units = 'C'
     tolerance_summary[:units] = ['', target_units]
     tolerance_summary[:data] = []
 
