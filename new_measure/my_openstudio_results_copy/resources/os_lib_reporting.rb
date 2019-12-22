@@ -1661,8 +1661,10 @@ module OsLib_Reporting
     sub_surface_data = {}
     sub_surface_data[:title] = 'Sub Surface Constructions'
     sub_surface_data[:header] = ['Construction', 'Area', 'Surface Count', 'U-Factor']
-    area_units = 'ft^2'
-    u_factor_units = 'Btu/ft^2*h*R'
+    # area_units = 'ft^2'
+    # u_factor_units = 'Btu/ft^2*h*R'
+	area_units = 'm^2'
+    u_factor_units = 'W/m^2*K'
     sub_surface_data[:units] = ['', area_units, '', u_factor_units]
     sub_surface_data[:data] = []
 
