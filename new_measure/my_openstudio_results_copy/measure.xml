@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>my_openstudio_results_copy</name>
   <uid>5a62fd57-0767-4d08-ba98-10bc9e465427</uid>
-  <version_id>0f160330-7706-4f4d-a620-ea11b566f422</version_id>
-  <version_modified>20191222T155534Z</version_modified>
+  <version_id>ef2165dd-1e6c-47a8-b372-a66af769b207</version_id>
+  <version_modified>20191222T180449Z</version_modified>
   <xml_checksum>69BA4D91</xml_checksum>
   <class_name>MyOpenStudioResultsCopy</class_name>
   <display_name>My OpenStudio Results Copy</display_name>
@@ -600,12 +600,6 @@
       <checksum>018A5AF7</checksum>
     </file>
     <file>
-      <filename>os_lib_reporting.rb</filename>
-      <filetype>rb</filetype>
-      <usage_type>resource</usage_type>
-      <checksum>9255259B</checksum>
-    </file>
-    <file>
       <filename>EdgeCaseModel.osm</filename>
       <filetype>osm</filetype>
       <usage_type>test</usage_type>
@@ -618,6 +612,12 @@
       <checksum>E5DCA090</checksum>
     </file>
     <file>
+      <filename>os_lib_reporting.rb</filename>
+      <filetype>rb</filetype>
+      <usage_type>resource</usage_type>
+      <checksum>CB28EC20</checksum>
+    </file>
+    <file>
       <version>
         <software_program>OpenStudio</software_program>
         <identifier>1.10.5</identifier>
@@ -626,7 +626,7 @@
       <filename>measure.rb</filename>
       <filetype>rb</filetype>
       <usage_type>script</usage_type>
-      <checksum>8B588F1A</checksum>
+      <checksum>83EE90D3</checksum>
     </file>
   </files>
 </measure>
