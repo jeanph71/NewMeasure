@@ -1147,7 +1147,7 @@ module OsLib_Reporting
       # data for air
       component = component.to_CoolingTowerSingleSpeed.get
       sizing_source_units = 'm^3/s'
-      sizing_target_units = 'cfm'
+      sizing_target_units = 'm^3/s'
       if component.designAirFlowRate.is_initialized
         sizing_ip = OpenStudio.convert(component.designAirFlowRate.get, sizing_source_units, sizing_target_units).get
         sizing_ip_neat = OpenStudio.toNeatString(sizing_ip, 2, true)
