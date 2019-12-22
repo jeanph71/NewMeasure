@@ -835,7 +835,7 @@ module OsLib_Reporting
         sizing_ip_neat = 'Autosized'
       end
       value_source_units = 'Pa'
-      value_target_units = 'inH_{2}O'
+      value_target_units = 'Pa'
       value_ip = OpenStudio.convert(component.pressureRise, value_source_units, value_target_units).get
       value_ip_neat = OpenStudio.toNeatString(value_ip, 2, true)
       data_arrays << [component.iddObject.name, sizing_ip_neat, sizing_target_units, 'Pressure Rise', value_ip_neat, value_target_units, '']
@@ -850,7 +850,7 @@ module OsLib_Reporting
       else
         if setpoint.controlVariable.to_s == 'Temperature'
           source_units = 'C'
-          target_units = 'F'
+          target_units = 'C'
           schedule_values_pretty = "#{OpenStudio.convert(schedule_values['min'], source_units, target_units).get.round(1)} to #{OpenStudio.convert(schedule_values['max'], source_units, target_units).get.round(1)}"
         else # TODO: - add support for other control variables
           schedule_values_pretty = "#{schedule_values['min']} to #{schedule_values['max']}"
