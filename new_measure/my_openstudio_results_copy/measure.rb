@@ -1,3 +1,4 @@
+# initialisation des commits
 require 'erb'
 require 'json'
 
