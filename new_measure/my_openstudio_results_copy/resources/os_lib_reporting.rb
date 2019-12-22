@@ -1175,7 +1175,7 @@ module OsLib_Reporting
       else
         if setpoint.controlVariable.to_s == 'Temperature'
           source_units = 'C'
-          target_units = 'F'
+          target_units = 'C'
           schedule_values_pretty = "#{OpenStudio.convert(schedule_values['min'], source_units, target_units).get.round(1)} to #{OpenStudio.convert(schedule_values['max'], source_units, target_units).get.round(1)}"
         else # TODO: - add support for other control variables
           schedule_values_pretty = "#{schedule_values['min']} to #{schedule_values['max']}"
