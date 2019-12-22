@@ -1073,7 +1073,7 @@ module OsLib_Reporting
     elsif component.to_BoilerHotWater.is_initialized
       component = component.to_BoilerHotWater.get
       sizing_source_units = 'W'
-      sizing_target_units = 'Btu/h'
+      sizing_target_units = 'W'
       if component.nominalCapacity.is_initialized
         sizing_ip = OpenStudio.convert(component.nominalCapacity.get, sizing_source_units, sizing_target_units).get
         sizing_ip_neat = OpenStudio.toNeatString(sizing_ip, 2, true)
