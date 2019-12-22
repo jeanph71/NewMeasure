@@ -668,7 +668,7 @@ module OsLib_Reporting
         sizing_ip_neat = 'Autosized'
       end
       value_source_units = 'm^3/s'
-      value_target_units = 'cfm'
+      value_target_units = 'm^3/s'
       if controller_oa.minimumOutdoorAirFlowRate.is_initialized
         value_ip = OpenStudio.convert(controller_oa.minimumOutdoorAirFlowRate.get, value_source_units, value_target_units).get
         value_ip_neat = OpenStudio.toNeatString(value_ip, 2, true)
