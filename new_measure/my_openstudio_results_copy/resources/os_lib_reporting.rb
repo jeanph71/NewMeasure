@@ -1414,7 +1414,7 @@ module OsLib_Reporting
       if component.coolingCoil.to_CoilHeatingDXSingleSpeed.is_initialized
         heating_coil = component.heatingCoil.to_CoilHeatingDXSingleSpeed.get
         sizing_source_units = 'W'
-        sizing_target_units = 'Btu/h'
+        sizing_target_units = 'W'
         if heating_coil.ratedTotalHeatingCapacity.is_initialized
           sizing_ip = OpenStudio.convert(heating_coil.ratedTotalHeatingCapacity.get, sizing_source_units, sizing_target_units).get
           sizing_ip_neat = OpenStudio.toNeatString(sizing_ip, 2, true)
