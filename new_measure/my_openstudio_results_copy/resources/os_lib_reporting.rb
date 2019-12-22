@@ -415,7 +415,7 @@ module OsLib_Reporting
     output_data_end_use = {}
     output_data_end_use[:title] = 'End Use'
     output_data_end_use[:header] = ['End Use', 'Consumption']
-    target_units = 'kBtu'
+    target_units = 'kWh'
     output_data_end_use[:units] = ['', target_units]
     output_data_end_use[:data] = []
     output_data_end_use[:chart_type] = 'simple_pie'
