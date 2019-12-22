@@ -288,7 +288,7 @@ module OsLib_Reporting
     eui =  sqlFile.netSiteEnergy.get / query_results.get
     display = 'EUI'
     source_units = 'GJ/m^2'
-    target_units = 'kBtu/ft^2'
+    target_units = 'kWh/m^2'
     if query_results.get > 0.0 # don't calculate EUI if building doesn't have any area
       value = OpenStudio.convert(eui, source_units, target_units).get
       value_neat = OpenStudio.toNeatString(value, 2, true)
