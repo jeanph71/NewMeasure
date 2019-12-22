@@ -1544,7 +1544,7 @@ module OsLib_Reporting
           sizing_ip_neat = 'Autosized'
         end
         value_source_units = 'Pa'
-        value_target_units = 'inH_{2}O'
+        value_target_units = 'Pa'
         value_ip = OpenStudio.convert(fan.pressureRise, value_source_units, value_target_units).get
         value_ip_neat = OpenStudio.toNeatString(value_ip, 2, true)
         data_array = ["#{component.iddObject.name} - #{fan.iddObject.name}", sizing_ip_neat, sizing_target_units, 'Pressure Rise', value_ip_neat, value_target_units, '']
