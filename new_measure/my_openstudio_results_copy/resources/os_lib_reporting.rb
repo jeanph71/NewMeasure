@@ -1680,20 +1680,25 @@ module OsLib_Reporting
     end
     ext_const_sub.sort.each do |construction, count|
       net_area = construction.getNetArea
-      net_area_ip = OpenStudio.convert(net_area, 'm^2', 'ft^2').get
-      net_area_ip_neat = OpenStudio.toNeatString(net_area_ip, 0, true)
+      # net_area_ip = OpenStudio.convert(net_area, 'm^2', 'ft^2').get
+      # net_area_ip_neat = OpenStudio.toNeatString(net_area_ip, 0, true)
+	    net_area_neat = OpenStudio.toNeatString(net_area, 0, true)
       surface_count = count
       source_units = 'm^2*K/W'
-      target_units = 'ft^2*h*R/Btu'
+      target_units = 'm^2*K/W'
       if construction.uFactor.is_initialized
         u_factor = construction.uFactor.get
-        u_factor_ip = 1 / OpenStudio.convert(1 / u_factor, source_units, target_units).get
-        u_factor_ip_neat = OpenStudio.toNeatString(u_factor_ip, 4, true)
+        # u_factor_ip = 1 / OpenStudio.convert(1 / u_factor, source_units, target_units).get
+        # u_factor_ip_neat = OpenStudio.toNeatString(u_factor_ip, 4, true)
+		u_factor_neat = OpenStudio.toNeatString(u_factor, 4, true)
       else
-        u_factor_ip_neat = ''
+        #u_factor_ip_neat = ''
+		u_factor_neat = ''
       end
-      sub_surface_data[:data] << [construction.name, net_area_ip_neat, surface_count, u_factor_ip_neat]
-      runner.registerValue(OsLib_Reporting.reg_val_string_prep(construction.name.to_s), net_area_ip, area_units)
+      # sub_surface_data[:data] << [construction.name, net_area_ip_neat, surface_count, u_factor_ip_neat]
+      # runner.registerValue(OsLib_Reporting.reg_val_string_prep(construction.name.to_s), net_area_ip, area_units)
+	  sub_surface_data[:data] << [construction.name, net_area_neat, surface_count, u_factor_neat]
+      runner.registerValue(OsLib_Reporting.reg_val_string_prep(construction.name.to_s), net_area, area_units)
     end
     envelope_tables << sub_surface_data
 
