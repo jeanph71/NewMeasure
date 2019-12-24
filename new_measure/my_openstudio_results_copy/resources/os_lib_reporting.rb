@@ -2770,7 +2770,7 @@ module OsLib_Reporting
             row_color << ''
           end
         end
-        row_data += [unmet_clg.round, unmet_clg_occ.round, "#{mean.round(1)} (F)"]
+        row_data += [unmet_clg.round, unmet_clg_occ.round, "#{mean.round(1)} (C)"]
         row_color += ['','','']
         temperature_table[:data] << row_data
         temperature_table[:data_color] << row_color
