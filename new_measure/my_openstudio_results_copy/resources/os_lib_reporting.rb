@@ -2668,9 +2668,11 @@ module OsLib_Reporting
     end
 
     # temperature_bins_temps_ip = [56, 61, 66, 68, 70, 72, 74, 76, 78, 83, 88]
-    temperature_bins_temps_si = [14, 16 ,18 ,19, 20, 21, 22, 23, 25, 27, 30]
+    temperature_bins_temps_ip = [14, 16 ,18 ,19, 20, 21, 22, 23, 25, 27, 30]
     temperature_bins_temps_ip.each do |i|
-      temperature_bins_temps_si << OpenStudio.convert(i, 'F', 'C').get
+      # temperature_bins_temps_si << OpenStudio.convert(i, 'F', 'C').get
+	  # Valeurs limites en °C
+	  temperature_bins_temps_si << i
     end
 
     # hash to store hours
