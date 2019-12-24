@@ -2668,26 +2668,20 @@ module OsLib_Reporting
     end
 
     # temperature_bins_temps_ip = [56, 61, 66, 68, 70, 72, 74, 76, 78, 83, 88]
-    temperature_bins_temps_ip = [14, 16 ,18 ,19, 20, 21, 22, 23, 25, 27, 30]
-	temperature_bins_temps_si = []
-    temperature_bins_temps_ip.each do |i|
-      # temperature_bins_temps_si << OpenStudio.convert(i, 'F', 'C').get
-	  # Valeurs limites en °C
-	  temperature_bins_temps_si << i
-    end
-
+    temperature_bins_temps_si = [14, 16 ,18 ,19, 20, 21, 22, 23, 25, 27, 30]
+	
     # hash to store hours
     temperature_bins = {}
-    for i in 0..(temperature_bins_temps_ip.size - 1)
+    for i in 0..(temperature_bins_temps_si.size - 1)
       if i == 0
-        temperature_bins["< #{temperature_bins_temps_ip[i]}"] = 0
+        temperature_bins["< #{temperature_bins_temps_si[i]}"] = 0
       else
-        temperature_bins["#{temperature_bins_temps_ip[i - 1]}-#{temperature_bins_temps_ip[i]}"] = 0
+        temperature_bins["#{temperature_bins_temps_si[i - 1]}-#{temperature_bins_temps_si[i]}"] = 0
       end
     end
 	
 	# catchall bin for values over the top
-	temperature_bins[">= #{temperature_bins_temps_ip.last}"] = 0
+	temperature_bins[">= #{temperature_bins_temps_si.last}"] = 0
 
     # create table
     temperature_table = {}
@@ -2699,9 +2693,9 @@ module OsLib_Reporting
     temperature_table[:header] += ['Unmet Clg','Unmet Clg - Occ', 'Mean Temp']
     temperature_table[:units] = ['', 'hr','hr']
     temperature_bins.each do |k, v|
-      temperature_table[:units] << 'F'
+      temperature_table[:units] << 'C'
     end
-    temperature_table[:units] += ['hr','hr','F']
+    temperature_table[:units] += ['hr','hr','C']
     temperature_table[:data] = []
     temperature_table[:data_color] = []
 
@@ -2758,8 +2752,9 @@ module OsLib_Reporting
         unmet_clg_occ = sqlFile.execAndReturnFirstDouble(query_clg_occ).get
 
         # get mean temp
-        mean = OpenStudio.convert(temp_sum / temp_counter.to_f, 'C', 'F').get
-
+        # mean = OpenStudio.convert(temp_sum / temp_counter.to_f, 'C', 'F').get
+		mean = temp_sum / temp_counter
+		
         # add rows to table
         row_data = [key, unmet_htg.round,unmet_htg_occ.round]
         row_color = ['','','']

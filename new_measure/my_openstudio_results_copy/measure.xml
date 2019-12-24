@@ -2,8 +2,8 @@
   <schema_version>3.0</schema_version>
   <name>my_openstudio_results_copy</name>
   <uid>5a62fd57-0767-4d08-ba98-10bc9e465427</uid>
-  <version_id>fe526888-6c57-43ce-8c62-5fdb6276f733</version_id>
-  <version_modified>20191224T161207Z</version_modified>
+  <version_id>cf1726b3-d18a-4f2c-81c2-4f0221f0fd3e</version_id>
+  <version_modified>20191224T161956Z</version_modified>
   <xml_checksum>69BA4D91</xml_checksum>
   <class_name>MyOpenStudioResultsCopy</class_name>
   <display_name>My OpenStudio Results Copy</display_name>
@@ -626,7 +626,7 @@
       <filename>os_lib_reporting.rb</filename>
       <filetype>rb</filetype>
       <usage_type>resource</usage_type>
-      <checksum>544819BC</checksum>
+      <checksum>4A57CF1F</checksum>
     </file>
   </files>
 </measure>
