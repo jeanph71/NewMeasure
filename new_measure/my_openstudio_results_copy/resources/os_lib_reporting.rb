@@ -2667,8 +2667,8 @@ module OsLib_Reporting
       return @zone_condition_section
     end
 
-    temperature_bins_temps_ip = [56, 61, 66, 68, 70, 72, 74, 76, 78, 83, 88]
-    temperature_bins_temps_si = []
+    # temperature_bins_temps_ip = [56, 61, 66, 68, 70, 72, 74, 76, 78, 83, 88]
+    temperature_bins_temps_si = [14, 16 ,18 ,19, 20, 21, 22, 23, 25, 27, 30]
     temperature_bins_temps_ip.each do |i|
       temperature_bins_temps_si << OpenStudio.convert(i, 'F', 'C').get
     end
@@ -2929,7 +2929,9 @@ module OsLib_Reporting
     table[:header] = columns
     source_units_lpd = 'W/m^2'
     source_units_energy = 'GJ'
-    target_units_lpd = 'W/ft^2'
+    #target_units_lpd = 'W/ft^2'
+	# LPD= Lighting Power Density 
+	target_units_lpd = 'W/m^2'
     target_units_energy = 'kWh'
     table[:source_units] = ['', '', source_units_lpd, 'W', '', 'hr', 'hr', '', source_units_energy] # used for conversation, not needed for rendering.
     table[:units] = ['', '', target_units_lpd, 'W', '', 'hr', 'hr', '', target_units_energy]
