@@ -3100,7 +3100,8 @@ module OsLib_Reporting
 
     # units for conversion
     source_units = 'J'
-    target_units = 'MBtu'
+    # target_units = 'MBtu'
+	target_units = 'kWh'
 
     # loop through fuel types
     OpenStudio::EndUseFuelType.getValues.each do |fuel_type|
