@@ -3290,13 +3290,13 @@ module OsLib_Reporting
     zone_summary_table[:title] = table_name
     zone_summary_table[:header] = columns
     source_units_area = 'm^2'
-    target_units_area = 'ft^2'
+    target_units_area = 'm^2'
     source_units_area_per_person = 'm^2/person'
-    target_units_area_per_person = 'ft^2/person'
+    target_units_area_per_person = 'm^2/person'
     source_units_volume = 'm^3'
-    target_units_volume = 'ft^3'
+    target_units_volume = 'm^3'
     source_units_pd = 'W/m^2'
-    target_units_pd = 'W/ft^2'
+    target_units_pd = 'W/m^2'
     zone_summary_table[:units] = ['', target_units_area, '', '', target_units_volume, '', target_units_area, target_units_area, target_units_area, target_units_pd, target_units_area_per_person, target_units_pd]
     zone_summary_table[:source_units] = ['', source_units_area, '', '', source_units_volume, '', source_units_area, source_units_area, source_units_area, source_units_pd, source_units_area_per_person, source_units_pd] # used for conversation, not needed for rendering.
     zone_summary_table[:data] = []
