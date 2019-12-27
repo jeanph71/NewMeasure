@@ -3791,8 +3791,8 @@ module OsLib_Reporting
     source_energy_table[:header] = columns
     source_units_total = 'GJ'
     source_units_area = 'MJ/m^2'
-    target_units_total = 'kBtu'
-    target_units_area = 'kBtu/ft^2'
+    target_units_total = 'kWh'
+    target_units_area = 'kWh/m^2'
     source_energy_table[:units] = ['', target_units_total, target_units_area, target_units_area]
     source_energy_table[:source_units] = ['', source_units_total, source_units_area, source_units_area] # used for conversation, not needed for rendering.
     source_energy_table[:data] = []
@@ -3875,8 +3875,8 @@ module OsLib_Reporting
     table[:header] = columns
     source_units_total = 'kg'
     source_units_rate = 'kg/s'
-    target_units_total = 'lb'
-    target_units_rate = 'lb/s'
+    target_units_total = 'kg'
+    target_units_rate = 'kg/s'
     table[:units] = ['', target_units_total, target_units_rate, '', target_units_rate, '']
     table[:source_units] = ['', source_units_total, source_units_rate, '', source_units_rate, ''] # used for conversation, not needed for rendering.
     table[:data] = []
