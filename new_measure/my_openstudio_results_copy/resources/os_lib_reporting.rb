@@ -2523,7 +2523,7 @@ module OsLib_Reporting
               monthly_fuel[:chart] << JSON.generate(label: category_str, label_x: month, value: valInUnits, color: end_use_colors[category_type])
               # for some reason sometimes 0 comes through here, show as blank of 0
               if valInUnits > 0
-                row_data << valInUnits.round(4)
+                row_data << valInUnits.round(2)
                 value_found = true
               else
                 row_data << ''
