@@ -3349,9 +3349,9 @@ module OsLib_Reporting
     target_units_power_clg = 'ton'
     target_units_power_htg = 'kBtu/h'
     source_units_air_flow = 'm^3/s'
-    target_units_air_flow = 'ft^3/min'
+    target_units_air_flow = 'm^3/min'
     source_units_temp = 'C'
-    target_units_temp = 'F'
+    target_units_temp = 'C'
     zone_dd_table[:units] = ['', '', '', '', target_units_air_flow, target_units_air_flow, '', target_units_temp, 'lbWater/lbAir']
     zone_dd_table[:source_units] = ['', '', '', '', source_units_air_flow, source_units_air_flow, '', source_units_temp, 'lbWater/lbAir'] # used for conversation, not needed for rendering.
     zone_dd_table[:data] = []
