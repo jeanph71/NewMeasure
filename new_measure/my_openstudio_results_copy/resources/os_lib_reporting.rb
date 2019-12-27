@@ -534,7 +534,7 @@ module OsLib_Reporting
     output_data_energy_use = {}
     output_data_energy_use[:title] = 'Energy Use'
     output_data_energy_use[:header] = ['Fuel', 'Consumption']
-    output_data_energy_use[:units] = ['', 'kBtu']
+    output_data_energy_use[:units] = ['', 'kWh']
     output_data_energy_use[:data] = []
     output_data_energy_use[:chart_type] = 'simple_pie'
     output_data_energy_use[:chart] = []
