@@ -2351,13 +2351,15 @@ module OsLib_Reporting
     OpenStudio::EndUseFuelType.getValues.each do |fuel_type|
       # get fuel type and units
       fuel_type = OpenStudio::EndUseFuelType.new(fuel_type).valueDescription
-      if fuel_type == 'Electricity'
-        units = "\"kWh\""
-        unit_str = 'kWh'
-      else
-        units = "\"Million Btu\""
-        unit_str = 'MBtu'
-      end
+      # if fuel_type == 'Electricity'
+        # units = "\"kWh\""
+        # unit_str = 'kWh'
+      # else
+        # units = "\"Million Btu\""
+        # unit_str = 'MBtu'
+      # end
+	   units = "\"kWh\""
+       unit_str = 'kWh'
 
       # create table
       monthly_fuel = {}
