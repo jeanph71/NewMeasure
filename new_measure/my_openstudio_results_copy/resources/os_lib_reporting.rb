@@ -3175,7 +3175,7 @@ module OsLib_Reporting
         output_timeseries = output_timeseries.get.values
         for i in 0..(output_timeseries.size - 1)
           month = hvac_load_profile_monthly_table[:header][i + 1 + num_blanks_start]
-          value = OpenStudio.convert(output_timeseries[i], 'C', 'F').get
+          value = OpenStudio.convert(output_timeseries[i], 'C', 'C').get
           dry_bulb_monthly << value.round(1)
           hvac_load_profile_monthly_table[:chart] << JSON.generate(label: 'Outdoor Temp', label_x: month, value2: value, color: 'green')
         end # end of for i in 0..(output_timeseries.size - 1)
