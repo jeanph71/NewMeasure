@@ -2455,11 +2455,11 @@ module OsLib_Reporting
         if OpenStudio.convert(v, 'J', unit_str).get == 0
           row_data << ''
         else
-          row_data << OpenStudio.convert(v, 'J', unit_str).get.round(2)
+          row_data << OpenStudio.convert(v, 'J', unit_str).get.round(1)
         end
       end
 
-      table_total = OpenStudio.convert(site_energy_use, 'J', unit_str).get.round(2)
+      table_total = OpenStudio.convert(site_energy_use, 'J', unit_str).get.round(1)
       row_data << table_total
       monthly_fuel[:data] << row_data
 
