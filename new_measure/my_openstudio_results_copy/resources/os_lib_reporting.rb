@@ -3499,7 +3499,7 @@ module OsLib_Reporting
     table[:title] = 'Average and Minimum Outdoor Air During Occupied Hours'
     table[:header] = columns
     source_units_volume = 'm^3'
-    target_units_volume = 'ft^3'
+    target_units_volume = 'm^3'
     table[:units] = ['', '', '', target_units_volume, 'ach', 'ach', 'ach', 'ach','ach', 'ach']
     table[:source_units] = ['', '', '', source_units_volume, 'ach', 'ach', 'ach', 'ach', 'ach', 'ach']
     table[:data] = []
