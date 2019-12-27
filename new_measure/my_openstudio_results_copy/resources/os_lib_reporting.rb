@@ -314,7 +314,7 @@ module OsLib_Reporting
     output_data_space_type_breakdown = {}
     output_data_space_type_breakdown[:title] = ''
     output_data_space_type_breakdown[:header] = ['Space Type Name', 'Floor Area', 'Standards Building Type', 'Standards Space Type']
-    units = 'ft^2'
+    units = 'm^2'
     output_data_space_type_breakdown[:units] = ['', units,'','']
     output_data_space_type_breakdown[:data] = []
     output_data_space_type_breakdown[:chart_type] = 'simple_pie'
