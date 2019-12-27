@@ -3091,7 +3091,7 @@ module OsLib_Reporting
     hvac_load_profile_monthly_table[:units] = []
     hvac_load_profile_monthly_table[:data] = []
     hvac_load_profile_monthly_table[:chart_type] = 'vertical_grouped_bar_with_comp_line'
-    hvac_load_profile_monthly_table[:chart_attributes] = { value_left: 'Cooling/Heating Load (MBtu)', label_x: 'Month', value_right: 'Average Outdoor Air Dry Bulb (F)', sort_xaxis: month_order }
+    hvac_load_profile_monthly_table[:chart_attributes] = { value_left: 'Cooling/Heating Load (kWh)', label_x: 'Month', value_right: 'Average Outdoor Air Dry Bulb (F)', sort_xaxis: month_order }
     hvac_load_profile_monthly_table[:chart] = []
 
     # hash to store monthly values
@@ -3154,7 +3154,7 @@ module OsLib_Reporting
     end
 
     # populate dry bulb data
-    dry_bulb_monthly = ['Average Outdoor Air Dry Bulb (F)']
+    dry_bulb_monthly = ['Average Outdoor Air Dry Bulb (C)']
     ann_env_pd = OsLib_Reporting.ann_env_pd(sqlFile)
     if ann_env_pd
       # get desired variable
@@ -3196,7 +3196,7 @@ module OsLib_Reporting
 
     # populate tables
     hvac_load_profile_monthly_table[:data] << dry_bulb_monthly
-    cooling_array = ['Cooling Load (MBtu)']
+    cooling_array = ['Cooling Load (kWh)']
     cooling_monthly.each do |k, v|
       cooling_array << v.round(2)
 
@@ -3205,7 +3205,7 @@ module OsLib_Reporting
     end
     hvac_load_profile_monthly_table[:data] << cooling_array
 
-    heating_array = ['Heating Load (MBtu)']
+    heating_array = ['Heating Load (kWh)']
     heating_monthly.each do |k, v|
       heating_array << v.round(2)
 
